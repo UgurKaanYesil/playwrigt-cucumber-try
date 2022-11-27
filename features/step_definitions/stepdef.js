@@ -5,7 +5,7 @@ const pageSelector = require('/Users/segmentify/WebstormProjects/personal/featur
 setDefaultTimeout(90000);
 
 BeforeAll(async() =>{
-     global.browser = await chromium.launch({ headless:true });
+     global.browser = await chromium.launch({ headless:true});
      global.page = await browser.newPage();
 });
 
@@ -29,4 +29,15 @@ When(/^I click the basket icon$/, async function () {
 });
 Then(/^I should be able to see basket page$/, async function () {
     await expect(page.url()).to.equal('https://www.n11.com/sepetim')
+});
+Given(/^I clicked to "([^"]*)" and write (.*) on searchbar$/, async function (searchbarLocator, keyword) {
+    await page.fill(pageSelector[searchbarLocator], keyword)
+});
+When(/^I press the enter on keyboard$/, async function () {
+    await page.press(pageSelector["searchbar"],'Enter')
+
+});
+Then(/^I should be able to see "([^"]*)" on screen$/, async function (productLocator) {
+    await expect(pageSelector[productLocator]).to.exist;
+
 });
