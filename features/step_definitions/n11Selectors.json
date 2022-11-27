@@ -1,0 +1,4 @@
+{
+  "searchbar" : "//div[@class='searchBoxWrap']",
+  "product" : "//div[@id='p-548149191']"
+}

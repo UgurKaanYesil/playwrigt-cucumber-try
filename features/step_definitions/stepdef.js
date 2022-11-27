@@ -2,6 +2,7 @@ const assert = require('assert');
 const { Given, When, Then, BeforeAll, AfterAll, After} = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
 const {expect} = require("chai");
+const pageSelector = require('n11Selectors.json')
 
 BeforeAll(async() =>{
      global.browser = await chromium.launch({ headless:true });
