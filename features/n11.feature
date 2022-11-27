@@ -13,8 +13,7 @@ Feature: N11 opening
 
   Scenario Outline: searching product
     Given I opened n11 site
-    Given I clicked to search bar
-    Given I write a <keyword> in "searchbar"
+    Given I clicked to "searchbar" and write <keyword> on searchbar
     When I press the enter on keyboard
     Then I should be able to see "product" on screen
 
