@@ -1,8 +1,8 @@
-const assert = require('assert');
-const { Given, When, Then, BeforeAll, AfterAll, After} = require('@cucumber/cucumber');
+const { Given, When, Then, BeforeAll, AfterAll, setDefaultTimeout} = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
 const {expect} = require("chai");
-const pageSelector = require('n11Selectors.json')
+const pageSelector = require('/Users/segmentify/WebstormProjects/personal/features/step_definitions/n11Selectors.json')
+setDefaultTimeout(90000);
 
 BeforeAll(async() =>{
      global.browser = await chromium.launch({ headless:true });
