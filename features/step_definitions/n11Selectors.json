@@ -1,4 +1,4 @@
 {
-  "searchbar" : "//div[@class='searchBoxWrap']",
-  "product" : "//div[@id='p-548149191']"
+  "searchbar" : "//input[@id='searchData']",
+  "product" : "//ul[1][@class='list-ul']"
 }
